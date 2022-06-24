@@ -1,0 +1,10 @@
+#there are two totoise:Slow,Fast;Slow will go one step and fast will go two step
+#for interviewer first show bruite force
+def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        temp1=head
+        temp2=head
+        while temp2!=None and temp2.next!=None :
+            temp1=temp1.next
+            temp2=temp2.next.next
+            
+        return temp1
