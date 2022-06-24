@@ -1,0 +1,9 @@
+#Taking three node :Cur,Prev,Temp;temp is for storing the current node when the current node looses its link with the next node
+def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        cur,prev=head,None
+        while cur.next!=None:
+            temp=cur.next
+            cur.next=prev
+            prev=cur
+            cur=temp
+        return cur
