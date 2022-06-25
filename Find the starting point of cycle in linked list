@@ -1,3 +1,4 @@
+#for buite force use hash map
 #it will contain three ponter slow,fast,temp/t:slow wil move 1 fast2 and if slow and fast collide (detection of cycle{Floyd cycle}) now to find starting point 
 #take another pointer temp that will start from head and will move till it meets slow(slow will also move with temp)
 #intution:l1=temp to startingpoint of cycle;l2=starting point of cycle to collide of s and f;
