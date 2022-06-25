@@ -1,0 +1,21 @@
+#it will contain three ponter slow,fast,temp/t:slow wil move 1 fast2 and if slow and fast collide (detection of cycle{Floyd cycle}) now to find starting point 
+#take another pointer temp that will start from head and will move till it meets slow(slow will also move with temp)
+#intution:l1=temp to startingpoint of cycle;l2=starting point of cycle to collide of s and f;
+#l1+l2=s;l1+l2+nc=f
+#2(l1+l2)=l1+l2+nc
+#l1=nc-l2:nc-l2 will be the remaining part of cycle which s will travel so that it wil meet with temp at starting point of cycle.
+def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        s=head
+        f=head
+        t=head
+        #if head!=None or head.next!=None:
+         #   return None
+        while f!=None and f.next!=None:
+            s=s.next
+            f=f.next.next
+            if  f==s:
+                while t!=s:
+                    s=s.next
+                    t=t.next
+                return t
+        return None
