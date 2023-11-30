@@ -1,0 +1,53 @@
+Javascript-
+o(n2)
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+   for(i=0;i<nums.length-1;i++)
+   {
+       for(j=i+1;j<nums.length;j++)
+       {
+           if(nums[i]+nums[j]==target)
+           {
+               return([i,j])
+           }
+       }
+   }
+    
+};
+0(n)-using hashmap
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+   const hashmap= new Map();
+   for(i=0;i<nums.length;i++)
+   {
+       hashmap.set(nums[i],i)
+       
+   }
+   for(i=0;i<nums.length;i++)
+   {
+       var complement=target-nums[i]
+       if(hashmap.has(complement) && hashmap.get(complement)!=i)
+       {
+           return([i,hashmap.get(complement)])
+       }
+   }
+    
+};
+python-
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap = {}
+        for i in range(len(nums)):
+            hashmap[nums[i]] = i
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in hashmap and hashmap[complement] != i:
+                return [i, hashmap[complement]] 
